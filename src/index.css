@@ -20,6 +20,10 @@ body {
 	scroll-behavior: smooth !important;
 }
 
+.bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
 @keyframes blob {
 	0%,
 	100% {
