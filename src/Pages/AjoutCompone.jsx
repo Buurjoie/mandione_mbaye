@@ -4,7 +4,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { ImagePlus } from "lucide-react";
 
-function AddCompone() {
+function AjoutCompone() {
   const [certificateImg, setCertificateImg] = useState("");
   const [project, setProject] = useState({
     title: "",
@@ -229,4 +229,4 @@ function AddCompone() {
   );
 }
 
-export default AddCompone;
+export default AjoutCompone;

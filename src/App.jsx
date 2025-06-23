@@ -10,8 +10,8 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
-import AddCompone from "./Pages/AddCompone";
 import SplashCursor from "./components/SplashCursor";
+import AjoutCompone from "./Pages/AjoutCompone";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -76,7 +76,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
         <Route path="/project/:id" element={<ProjectPageLayout />} />
-        <Route path="/add" element={<AddCompone />} />
+        <Route path="/add" element={<AjoutCompone />} />
       </Routes>
     </BrowserRouter>
   );
