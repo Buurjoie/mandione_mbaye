@@ -42,13 +42,13 @@ function AjoutCompone() {
   const handleAddProject = async () => {
     try {
       await addDoc(collection(db, "projects"), {
-        title: project.title,
-        description: project.description,
-        features: project.features.split(",").map((f) => f.trim()),
-        github: project.github,
-        img: project.img,
-        link: project.link,
-        techStack: project.techStack.split(",").map((t) => t.trim()),
+        Title: project.title,
+        Description: project.description,
+        Features: project.features.split(",").map((f) => f.trim()),
+        Github: project.github,
+        Img: project.img,
+        Link: project.link,
+        TechStack: project.techStack.split(",").map((t) => t.trim()),
         id: project.id,
       });
       alert("Projet ajouté");

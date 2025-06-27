@@ -70,7 +70,7 @@ const ProjectPageLayout = () => (
 
 const AjoutPageLayout = () => (
   <>
-    <SplashCursor />
+    {/* <SplashCursor /> */}
     <AjoutCompone />
     <footer>
       <center>
