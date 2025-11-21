@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useState, useEffect, useContext } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -119,20 +120,25 @@ const Navbar = () => {
                     </div>
                 </div>
     
-                {/* Mobile Menu Button */}
-                <div className="md:hidden">
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className={`relative p-2 text-[#e2d3fd] hover:text-white transition-transform duration-300 ease-in-out transform ${
-                            isOpen ? "rotate-90 scale-125" : "rotate-0 scale-100"
-                        }`}
-                    >
-                        {isOpen ? (
-                            <X className="w-6 h-6" />
-                        ) : (
-                            <Menu className="w-6 h-6" />
-                        )}
-                    </button>
+                {/* Theme toggle + Mobile Menu Button */}
+                <div className="flex items-center gap-2">
+                    {/* Theme toggle */}
+                    <ThemeToggle />
+
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className={`relative p-2 text-[#e2d3fd] hover:text-white transition-transform duration-300 ease-in-out transform ${
+                                isOpen ? "rotate-90 scale-125" : "rotate-0 scale-100"
+                            }`}
+                        >
+                            {isOpen ? (
+                                <X className="w-6 h-6" />
+                            ) : (
+                                <Menu className="w-6 h-6" />
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,6 +178,20 @@ const Navbar = () => {
         </div>
     </nav>
     
+    );
+};
+
+const ThemeToggle = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
+    return (
+        <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title="Basculer thème"
+            className="flex items-center justify-center w-10 h-10 rounded-md bg-[#0b0720]/30 border border-transparent hover:border-white transition-colors text-[#e2d3fd]"
+        >
+            {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
     );
 };
 

@@ -16,8 +16,16 @@
 html,
 body {
 	overflow-x: hidden;
-	background: #030014;
+	background: #f8fafc; /* light default */
+	color: #0f172a;
 	scroll-behavior: smooth !important;
+}
+
+/* dark mode overrides when `dark` class is present on <html> */
+html.dark,
+html.dark body {
+	background: #030014;
+	color: #e2d3fd;
 }
 
 .bg-gradient-to-br {

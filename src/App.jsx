@@ -15,8 +15,7 @@ import AjoutCompone from "./Pages/AjoutCompone";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
-    <>
-     <SplashCursor />
+  <>
       <AnimatePresence mode="wait">
         {showWelcome && (
           <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
@@ -26,7 +25,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       {!showWelcome && (
         <>
           <Navbar />
-          {/* <AnimatedBackground /> */}
+          <AnimatedBackground />
           <Home />
           <About />
           <Portofolio />
@@ -51,7 +50,6 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
 
 const ProjectPageLayout = () => (
   <>
-    <SplashCursor />
     <ProjectDetails />
     <footer>
       <center>
