@@ -22,7 +22,7 @@ const StatusBadge = memo(() => (
 ));
 
 const MainTitle = memo(() => (
-  <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
+  <div className="space-y-2 text-center" data-aos="fade-up" data-aos-delay="600">
     <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
@@ -30,8 +30,8 @@ const MainTitle = memo(() => (
           Developeur
         </span>
       </span>
-      <br />
-      <span className="relative inline-block mt-2">
+      {/* <br /> */}
+      <span className="relative inline-block mt-2 ms-2">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
           Full Stack
@@ -101,7 +101,7 @@ const Home = () => {
       AOS.init({
         once: true,
         offset: 10,
-       
+
       });
     };
 
@@ -153,134 +153,100 @@ const Home = () => {
       progressiveLoad: true,
     },
     style: { width: "100%", height: "100%" },
-    className: `w-full h-full transition-all duration-500 ${
-      isHovering 
-        ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2" 
-        : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
-    }`
+    className: `w-full h-full transition-all duration-500 ${isHovering
+      ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
+      : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
+      }`
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#030014] overflow-hidden" id="Home">
-        {/* <Hyperspeed
-  effectOptions={{
-    onSpeedUp: () => { },
-    onSlowDown: () => { },
-    distortion: 'turbulentDistortion',
-    length: 400,
-    roadWidth: 10,
-    islandWidth: 2,
-    lanesPerRoad: 4,
-    fov: 90,
-    fovSpeedUp: 150,
-    speedUp: 2,
-    carLightsFade: 0.4,
-    totalSideLightSticks: 20,
-    lightPairsPerRoadWay: 40,
-    shoulderLinesWidthPercentage: 0.05,
-    brokenLinesWidthPercentage: 0.1,
-    brokenLinesLengthPercentage: 0.5,
-    lightStickWidth: [0.12, 0.5],
-    lightStickHeight: [1.3, 1.7],
-    movingAwaySpeed: [60, 80],
-    movingCloserSpeed: [-120, -160],
-    carLightsLength: [400 * 0.03, 400 * 0.2],
-    carLightsRadius: [0.05, 0.14],
-    carWidthPercentage: [0.3, 0.5],
-    carShiftX: [-0.8, 0.8],
-    carFloorSeparation: [0, 5],
-    colors: {
-      roadColor: 0x080808,
-      islandColor: 0x0a0a0a,
-      background: 0x000000,
-      shoulderLines: 0xFFFFFF,
-      brokenLines: 0xFFFFFF,
-      leftCars: [0xD856BF, 0x6750A2, 0xC247AC],
-      rightCars: [0x03B3C3, 0x0E5EA5, 0x324555],
-      sticks: 0x03B3C3,
-    }
-  }}
-/> */}
-      <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
-        <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
-          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
-            {/* Left Column */}
-            <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0 ms-3"
-              data-aos="fade-right"
-              data-aos-delay="200">
-              <div className="space-y-4 sm:space-y-6">
-                <StatusBadge />
-                <MainTitle />
+    <div className="relative min-h-screen bg-white dark:bg-[#030014] overflow-hidden" id="Home">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+      </div>
+      <div className={`flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+        {/* <div className="container mx-auto px-[5%] sm:px-6 lg:px-[0%] min-h-screen">
+          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20"> */}
+        {/* Left Column */}
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full lg:w-full space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0"
+          data-aos="fade-right"
+          data-aos-delay="200">
+          <div className="space-y-4 sm:space-y-6">
+            <StatusBadge />
+            <MainTitle />
 
-                {/* Typing Effect */}
-                <div className="h-8 flex items-center" data-aos="fade-up" data-aos-delay="800">
-                  <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-700 to-gray-900 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent font-light">
-                    {text}
-                  </span>
-                  <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"></span>
-                </div>
-
-                {/* Description */}
-                <p className="text-base md:text-lg text-gray-700 dark:text-gray-400 max-w-xl leading-relaxed font-light"
-                  data-aos="fade-up"
-                  data-aos-delay="1000">
-                  Vos idées, notre expertise Full Stack
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-3 justify-start" data-aos="fade-up" data-aos-delay="1200">
-                  {TECH_STACK.map((tech, index) => (
-                    <TechStack key={index} tech={tech} />
-                  ))}
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-row gap-3 w-full justify-start" data-aos="fade-up" data-aos-delay="1400">
-                  <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
-                  <CTAButton href="#Contact" text="Contact" icon={Mail} />
-                </div>
-
-                {/* Social Links */}
-                <div className="hidden sm:flex gap-4 justify-start" data-aos="fade-up" data-aos-delay="1600">
-                  {SOCIAL_LINKS.map((social, index) => (
-                    <SocialLink key={index} {...social} />
-                  ))}
-                </div>
-              </div>
+            {/* Typing Effect */}
+            <div className="h-8 flex items-center justify-center" data-aos="fade-up" data-aos-delay="800">
+              <span className="text-xl md:text-2xl bg-gradient-to-r from-gray-700 to-gray-900 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent font-light">
+                {text}
+              </span>
+              <span className="w-[3px] h-6 bg-gradient-to-t from-[#6366f1] to-[#a855f7] ml-1 animate-blink"></span>
             </div>
 
+            {/* Description */}
+            <div className="flex items-center justify-center">
+
+              <p className="text-base text-center md:text-lg text-gray-700 dark:text-gray-400 max-w-xl leading-relaxed font-light"
+                data-aos="fade-up"
+                data-aos-delay="1000">
+                Vos idées, notre expertise Full Stack
+              </p>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-3 items-center justify-center" data-aos="fade-up" data-aos-delay="1200">
+              {TECH_STACK.map((tech, index) => (
+                <TechStack key={index} tech={tech} />
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-row gap-3 w-fullitems-center justify-center" data-aos="fade-up" data-aos-delay="1400">
+              <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
+              <CTAButton href="#Contact" text="Contact" icon={Mail} />
+            </div>
+
+            {/* Social Links */}
+            <div className="hidden sm:flex gap-4 items-center justify-center" data-aos="fade-up" data-aos-delay="1600">
+              {SOCIAL_LINKS.map((social, index) => (
+                <SocialLink key={index} {...social} />
+              ))}
+            </div>
+            {/* </div>
+            </div> */}
+
             {/* Right Column - Optimized Lottie Animation */}
-            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
+            {/* <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
               data-aos="fade-left"
               data-aos-delay="600">
               <div className="relative w-full opacity-90">
-                <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
-                  isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
-                }`}>
-                </div>
-
-                <div className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${
-                  isHovering ? "scale-105" : "scale-100"
-                }`}>
-                  <DotLottieReact {...lottieOptions} />
-                </div>
-
-                <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
-                  isHovering ? "opacity-50" : "opacity-20"
-                }`}>
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${
-                    isHovering ? "scale-110" : "scale-100"
+                <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
                   }`}>
+                </div>
+
+                <div className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${isHovering ? "scale-105" : "scale-100"
+                  }`}>
+                </div>
+
+                <div className={`absolute inset-0 pointer-events-none transition-all duration-700 ${isHovering ? "opacity-50" : "opacity-20"
+                  }`}>
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 ${isHovering ? "scale-110" : "scale-100"
+                    }`}>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
     </div>
+
   );
 };
 
